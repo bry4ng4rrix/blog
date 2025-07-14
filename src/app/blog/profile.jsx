@@ -24,7 +24,7 @@ const profile = () => {
           
         </div>
         <div className='border border-dashed rounded-sm border-foreground '>
-            <Badge className='text-center '>Nouveau Blog</Badge>
+            <p className='text-center  font-semibold'>Nouveau Blog</p>
             <form className='m-5'>
               <Input placeholder='Titre du blog' className='mb-2' />
                <Textarea placeholder='Description du blog' className='mb-2' />
