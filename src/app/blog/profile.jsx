@@ -23,8 +23,8 @@ const profile = () => {
 
           
         </div>
-        <div className='border border-dashed rounded-sm border-foreground '>
-            <p className='text-center  font-semibold'>Nouveau Blog</p>
+        <div className='border border-dashed rounded-sm  '>
+            <p className='text-center  m-2'>Nouveau Blog</p>
             <form className='m-5'>
               <Input placeholder='Titre du blog' className='mb-2' />
                <Textarea placeholder='Description du blog' className='mb-2' />
