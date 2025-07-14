@@ -23,8 +23,10 @@ const allblog = () => {
 
   return (
     <Card className="p-5 rounded-lg min-w-sm ">
-        <CardHeader>
-          <CardTitle>Titre</CardTitle>
+        <CardHeader className="flex justify-between">
+            <CardTitle>Titre</CardTitle>
+          <div className='h-10 w-10 rounded-full bg-foreground'>
+          </div>
         </CardHeader>
         <CardContent>
           <CardDescription>
@@ -35,6 +37,7 @@ const allblog = () => {
           </CardDescription>
         </CardContent>
         <CardFooter className="space-x-2 flex justify-between">
+          <p className='text-sm fotn-bold '>Bryan garrix</p>
           <Heart
             className={`${like ? "text-destructive" : "text-foreground"}`}
             onClick={btnlike}

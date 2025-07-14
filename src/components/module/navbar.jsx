@@ -18,7 +18,7 @@ const Navbar = () => {
 
   return (
     <>
-      <nav className="p-3 bg-background flex flex-row w-full items-center justify-between m-2 rounded-full relative">
+      <nav className="p-3 bg-background flex flex-row  items-center justify-between m-2 rounded-full relative">
         <div className="flex items-center gap-6">
           <img src="/favicon.ico" alt="logo" className="h-6 w-6" />
 

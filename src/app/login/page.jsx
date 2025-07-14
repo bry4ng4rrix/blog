@@ -29,7 +29,7 @@ export default function LoginPage() {
 
   return (
     <div className="flex items-center justify-center bg-background p-4">
-      <Card className="w-full max-w-md shadow-lg">
+      <Card className="w-full min-w-sm max-w-md shadow-lg">
         <CardHeader className="space-y-1 text-center">
           <CardTitle className="text-2xl font-bold">Connexion</CardTitle>
           <CardDescription>Entrez vos identifiants pour accéder à votre compte</CardDescription>
