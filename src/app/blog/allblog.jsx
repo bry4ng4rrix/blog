@@ -25,7 +25,7 @@ const allblog = () => {
   }
 
   return (
-    <Card className="p-5 rounded-lg min-w-sm ">
+    <Card className="p-5 rounded-lg min-w-sm hover:shadow-xl ">
         <CardHeader className="flex justify-between">
             <CardTitle>Titre</CardTitle>
           <img src='https://ui-avatars.com/api/?name=Bg&size=128&background=random&color=fff&rounded=true' className='h-10 w-10  object-cover'>
