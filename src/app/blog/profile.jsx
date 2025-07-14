@@ -24,7 +24,7 @@ const profile = () => {
           
         </div>
         <div className=''>
-            <p className='text-center '>Crée un blog </p>
+            <Badge className='text-center '>Nouveau Blog</Badge>
             <form className='m-5'>
               <Input placeholder='Titre du blog' className='mb-2' />
                <Textarea placeholder='Description du blog' className='mb-2' />
