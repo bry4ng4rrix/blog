@@ -410,10 +410,6 @@
     margin-inline: calc(var(--spacing) * 1);
   }
 
-  .mx-2 {
-    margin-inline: calc(var(--spacing) * 2);
-  }
-
   .mx-auto {
     margin-inline: auto;
   }
@@ -542,10 +538,6 @@
     height: var(--radix-select-trigger-height);
   }
 
-  .h-auto {
-    height: auto;
-  }
-
   .h-px {
     height: 1px;
   }
@@ -594,20 +586,12 @@
     width: calc(var(--spacing) * 12);
   }
 
-  .w-auto {
-    width: auto;
-  }
-
   .w-fit {
     width: fit-content;
   }
 
   .w-full {
     width: 100%;
-  }
-
-  .w-screen {
-    width: 100vw;
   }
 
   .max-w-2xl {
@@ -1663,12 +1647,6 @@
 
   .data-\[variant\=destructive\]\:focus\:text-destructive[data-variant="destructive"]:focus {
     color: var(--destructive);
-  }
-
-  @media (width >= 40rem) {
-    .sm\:flex {
-      display: flex;
-    }
   }
 
   @media (width >= 40rem) {
