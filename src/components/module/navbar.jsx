@@ -25,13 +25,13 @@ const Navbar = () => {
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-6 text-sm font-semibold">
             <Link href="/" className="hover:text-primary transition-colors">
-              Home
-            </Link>
-            <Link href="/about" className="hover:text-primary transition-colors">
-              About
+              Accueil
             </Link>
             <Link href="/blog" className="hover:text-primary transition-colors">
               Blog
+            </Link>
+            <Link href="/about" className="hover:text-primary transition-colors">
+             Contact
             </Link>
             <Link href="/login" className="hover:text-primary transition-colors">
               Connexion

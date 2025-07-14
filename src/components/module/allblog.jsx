@@ -4,6 +4,7 @@ import { Button } from '@/components/ui/button'
 import { Heart ,MessageSquareText} from 'lucide-react'
 import { useState,useEffect } from 'react'
 import { Input } from '@/components/ui/input';
+import { Badge } from '@/components/ui/badge'
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import {
@@ -27,7 +28,7 @@ const allblog = () => {
     <Card className="p-5 rounded-lg min-w-sm ">
         <CardHeader className="flex justify-between">
             <CardTitle>Titre</CardTitle>
-          <img src='https://ui-avatars.com/api/?name=Bg&size=128&background=random&color=fff&rounded=true' className='h-10 w-10 rounded-full'>
+          <img src='https://ui-avatars.com/api/?name=Bg&size=128&background=random&color=fff&rounded=true' className='h-10 w-10  object-cover'>
           </img>
         </CardHeader>
         <CardContent>
@@ -39,10 +40,13 @@ const allblog = () => {
           </CardDescription>
         </CardContent>
         <CardFooter className="space-x-2 flex justify-between">
-          <Heart
+          <div className='flex gap-2 items-center justify-center'>
+            <Heart
             className={`${like ? "text-destructive" : "text-foreground"}`}
             onClick={btnlike}
           />
+          <Badge className="text-foreground w-auto h-6 border-foreground" variant="outline">10</Badge>
+          </div>
 
           <form className="flex w-full max-w-sm items-center gap-2">
             <Input type="Texte" placeholder="Commentaire" />
