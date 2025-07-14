@@ -23,7 +23,7 @@ const profile = () => {
 
           
         </div>
-        <div className=''>
+        <div className='border border-dashed '>
             <Badge className='text-center '>Nouveau Blog</Badge>
             <form className='m-5'>
               <Input placeholder='Titre du blog' className='mb-2' />
