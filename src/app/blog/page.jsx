@@ -47,7 +47,7 @@ const page = () => {
     setlike(prev => !prev);
  }
   return (
-  <div className="grid  sm:grid-cols-1 gap-4 p-2 my-5 "> 
+  <div className="grid  sm:grid-cols-1 gap-4 p-2 justify-center items-center m-5 "> 
    <ToastContainer
         position="top-right"
         autoClose={3000}
