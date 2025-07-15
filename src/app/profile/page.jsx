@@ -23,7 +23,8 @@ const profile = () => {
   const [utilisateur,setUtilisateur] = useState({});
   const [titre,setTitre] = useState()
   const [description,setDescription] = useState()
-   const [blog,setBlog] = useState([])
+  const [blog,setBlog] = useState([])
+  const [blogCount, setBlogCount] = useState(0);
 
   const btnlike = () => {
     setlike(prev => !prev);
@@ -39,9 +40,10 @@ const profile = () => {
              const data = await response.json();
              // Toujours set un tableau
              if (Array.isArray(data)) {
-               setBlog(data);
+               setBlog(data.blogs);
              } else if (typeof data === 'object' && data !== null) {
                setBlog([data]);
+               setBlogCount(data.blog_count || 0);
              } else {
                setBlog([]);
              }
@@ -157,7 +159,7 @@ fetchuser();
               <p>Nom : {utilisateur.first_name}</p>
               <p>Prenom : {utilisateur.last_name}</p>
               <p>Email : {utilisateur.email}</p>
-              <p>Blog : {blog.blog_count}</p>
+              <p>Blog : {blogCount}</p>
             </div>
 
           
