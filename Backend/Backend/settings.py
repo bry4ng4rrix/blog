@@ -162,7 +162,7 @@ MEDIA_ROOT = BASE_DIR / 'media'
 CORS_ALLOWED_CREDENTIALS = True
 
 CORS_ALLOWED_ORIGINS = [
-    "https://blog-s1n0.onrender.com"
+    "https://garrixblog.vercel.app/"
 ]
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
