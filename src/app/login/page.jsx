@@ -51,9 +51,8 @@ export default function LoginPage() {
         localStorage.setItem('is_active', result.user.is_active ? 'true' : 'false');
         localStorage.setItem('is_superuser', result.user.is_superuser ? 'true' : 'false');
         toast.success('Connexion reussi')
-        setTimeout(() => {
-          window.location.href = "/";
-        }, 2000);
+        window.location.href = "/";
+        
 
       } else {
         // Vérifier si c'est une erreur de serializer
