@@ -27,6 +27,6 @@ urlpatterns = [
     path('login/', LoginView.as_view(), name='login'),
     path('register/', RegisterView.as_view(), name='register'),
     path('token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
-    path('profile/', profile_view.as_view(), name='profile'),
+    path('profile/', profile_view, name='profile'),
 
 ] + static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)
