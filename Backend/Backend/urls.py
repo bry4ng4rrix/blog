@@ -16,9 +16,9 @@ from rest_framework_simplejwt.views import (
 
 
 router = routers.DefaultRouter()
-router.register('user',views.UserpView,'utilisateur')
-router.register('blog',views.BlogView,'blog')
-router.register('bloguser',views.Blogparuser,'blogparuser')
+router.register('/user',views.UserpView,'utilisateur')
+router.register('/blog',views.BlogView,'blog')
+router.register('/bloguser',views.Blogparuser,'blogparuser')
 
 urlpatterns = [
     path('admin/', admin.site.urls),
