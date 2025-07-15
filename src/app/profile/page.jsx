@@ -174,7 +174,7 @@ fetchuser();
       </div>
 
     </Card>
-     <div className="grid grid-cols-2 gap-4 m-5">
+     <div className="grid sm:grid-cols-2 gap-4 m-5">
             {blog.map((blog)=>(
                  <Card key={blog.id} className="p-5 rounded-lg min-w-sm hover:shadow-xl justify-between ">
                      <CardHeader className="flex  justify-between">
