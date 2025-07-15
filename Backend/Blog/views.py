@@ -92,6 +92,15 @@ class Blogparuser(viewsets.ReadOnlyModelViewSet):
         user = self.request.user
         return blog.objects.filter(user=user) if user.is_authenticated else blog.objects.none()
 
+    def list(self, request, *args, **kwargs):
+        queryset = self.get_queryset()
+        serializer = self.get_serializer(queryset, many=True)
+        count = queryset.count()
+        return Response({
+            "blog_count": count,
+            "blogs": serializer.data
+        }, status=status.HTTP_200_OK)
+
 
 # ✅ Profil utilisateur connecté
 @api_view(['GET'])
