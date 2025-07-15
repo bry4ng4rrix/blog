@@ -6,7 +6,7 @@ from rest_framework import routers
 from django.conf import settings
 from Blog import views
 from Blog.views import (
-    LoginView,RegisterView,UserpView ,BlogView,Blogparuser,profile_view
+    LoginView,RegisterView,UserpView ,BlogView,Blogparuser,profile_view,blog_count_view
 )
 from rest_framework_simplejwt.views import (
     TokenObtainPairView,
@@ -28,5 +28,6 @@ urlpatterns = [
     path('register/', RegisterView.as_view(), name='register'),
     path('token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
     path('profile/', profile_view, name='profile'),
+    path('blog-count/', blog_count_view, name='blog-count'),
 
 ] + static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)
