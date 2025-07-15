@@ -51,7 +51,7 @@ export default function LoginPage() {
         localStorage.setItem('is_active', result.user.is_active ? 'true' : 'false');
         localStorage.setItem('is_superuser', result.user.is_superuser ? 'true' : 'false');
         toast.success('Connexion reussi')
-        window.location.href = "/";
+        window.location.href = "/blog";
         
 
       } else {
