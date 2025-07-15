@@ -108,3 +108,15 @@ def profile_view(request):
         "is_staff": user.is_staff,
         "is_superuser": user.is_superuser,
     }, status=status.HTTP_200_OK)
+
+@api_view(['GET'])
+@permission_classes([IsAuthenticated])
+def blog_count_view(request):
+    user = request.user
+    count = blog.objects.filter(user=user).count()
+    return Response({
+        "username": user.username,
+        "email": user.email,
+        "blog_count": count
+    }, status=status.HTTP_200_OK)
+
