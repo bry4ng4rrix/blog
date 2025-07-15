@@ -21,7 +21,7 @@ const page = () => {
     const [blog,setBlog] = useState([])
      const token = typeof window !== 'undefined' ? localStorage.getItem('access_token') : null;
     const fetchblog = async()=> {
-        const response = await fetch('http://localhost:8000/api/blog/' , {
+        const response = await fetch('https://blog-s1n0.onrender.com/api/blog/' , {
              method : 'GET',
                headers : {
                    'Authorization': `Bearer ${token}`,
