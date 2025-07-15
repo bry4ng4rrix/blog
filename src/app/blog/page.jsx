@@ -67,7 +67,7 @@ const page = () => {
         {blog.map((blog)=>(
              <Card key={blog.id} className="p-5 rounded-lg min-w-sm hover:shadow-xl justify-between ">
                  <CardHeader className="flex  justify-between">
-                     <CardTitle>{blog.titre} <br /> <p className="text-muted-foreground text-sm">{blog.date_post}</p> </CardTitle>
+                     <CardTitle>{blog.titre} <br /> <p className="text-muted-foreground text-sm">{blog.date_post} par : {blog.user.username}</p> </CardTitle>
                      
                      
                    <img src='https://ui-avatars.com/api/?name=Bg&size=128&background=random&color=fff&rounded=true' className='h-10 w-10  object-cover'>
