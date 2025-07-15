@@ -61,4 +61,4 @@ class UserSerialiser(serializers.ModelSerializer):
 class BlogSerializer(serializers.ModelSerializer):
     class Meta:
         model = blog
-        fields = ('id','titre','description','date_post','user')
+        fields = ('id','titre','description','date_post')
