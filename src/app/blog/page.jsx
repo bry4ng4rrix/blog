@@ -62,7 +62,9 @@ const page = () => {
         pauseOnHover
         transition={Bounce}
       />
-    <Profile fetchblog={fetchblog}/>
+   {token &&(
+ <Profile fetchblog={fetchblog}/>
+)}
         
         <div className="grid grid-cols-2 gap-4">
         {blog.map((blog)=>(
