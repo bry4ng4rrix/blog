@@ -36,13 +36,11 @@ const Navbar = () => {
             <Link href="/blog" className="hover:text-primary transition-colors">
               Blog
             </Link>
-            <Link href="/about" className="hover:text-primary transition-colors">
-             Contact
-            </Link>
             {username && (
-              <a href="/" className="hover:text-primary transition-colors">
-                {username}
-              </a>
+              <Link href="/profile" className="hover:text-primary transition-colors">
+                profile
+              </Link>
+              
             )}
             {!username && (
 

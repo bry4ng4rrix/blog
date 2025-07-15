@@ -157,10 +157,12 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 MEDIA_URL =  '/media/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 MEDIA_ROOT = BASE_DIR / 'media'
 CORS_ALLOWED_CREDENTIALS = True
 
 CORS_ALLOWED_ORIGINS = [
+    "Backend.onrender.com",
     "http://localhost:3000",
     "http://127.0.0.1:3000",
 ]

@@ -1,5 +1,4 @@
 "use client";
-import Profile from "./profile";
 import { Button } from '@/components/ui/button'
 import { Heart ,MessageSquareText} from 'lucide-react'
 import { useState,useEffect } from 'react'
@@ -62,9 +61,7 @@ const page = () => {
         pauseOnHover
         transition={Bounce}
       />
-   {token &&(
- <Profile fetchblog={fetchblog}/>
-)}
+ 
         
         <div className="grid grid-cols-2 gap-4">
         {blog.map((blog)=>(

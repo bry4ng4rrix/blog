@@ -70,3 +70,14 @@ class BlogView(viewsets.ModelViewSet):
 
     def perform_create(self, serializer):
         serializer.save(user=self.request.user)
+
+
+class Blogparuser(viewsets.ReadOnlyModelViewSet):
+    serializer_class = BlogSerializer
+    permission_classes = [IsAuthenticated]
+    queryset = blog.objects.all()  
+    pagination_class = None
+
+    def get_queryset(self):
+        user = self.request.user
+        return blog.objects.filter(user=user) if user.is_authenticated else blog.objects.none()
