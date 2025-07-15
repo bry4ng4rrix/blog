@@ -29,7 +29,7 @@ const profile = () => {
     setlike(prev => !prev);
  }
       const fetchblog = async()=> {
-          const response = await fetch('http://localhost:8000/api/bloguser' , {
+          const response = await fetch('https://blog-s1n0.onrender.com/api/bloguser' , {
                method : 'GET',
                  headers : {
                      'Authorization': `Bearer ${token}`,
@@ -50,7 +50,7 @@ const profile = () => {
 const handledelete = async(id) => {
   toast.dismiss()
   try {
-    const response = await fetch(`http://localhost:8000/api/blog/${id}/`,{
+    const response = await fetch(`https://blog-s1n0.onrender.com/api/blog/${id}/`,{
       method : 'DELETE',
       headers : {
         'Authorization': `Bearer ${token}`,
@@ -79,7 +79,7 @@ const handledelete = async(id) => {
 
   const fetchuser = async()=> {
   
-         const response = await fetch('http://localhost:8000/api/user/' , {
+         const response = await fetch('https://blog-s1n0.onrender.com/api/user/' , {
               method : 'GET',
                 headers : {
                     'Authorization': `Bearer ${token}`,
@@ -104,7 +104,7 @@ const handledelete = async(id) => {
       return;
     }
 
-    const response = await fetch('http://localhost:8000/api/blog/' , {
+    const response = await fetch('https://blog-s1n0.onrender.com/api/blog/' , {
          method : 'POST',
            headers : {
                'Authorization': `Bearer ${token}`,
