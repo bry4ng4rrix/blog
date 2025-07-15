@@ -66,7 +66,7 @@ export default function Register() {
         toast.success("Inscription réussie ! Redirection...");
         // Rediriger vers la page de connexion après un délai
         setTimeout(() => {
-          window.location.href = "/";
+          window.location.href = "/blog";
         }, 2000);
       } else {
         // Gestion des erreurs de validation
