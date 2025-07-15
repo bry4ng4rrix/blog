@@ -3,17 +3,23 @@
 import { useState } from "react";
 import Link from "next/link";
 import { ThemeToggle } from "@/components/module/ThemeToggle";
-import { Menu, X } from "lucide-react";
+import { Menu, X,LogOut } from "lucide-react";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-
+  const username = typeof window !== 'undefined' ? localStorage.getItem('username') : null;
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
   const closeMenu = () => {
     setIsMenuOpen(false);
+  };
+
+  const handleLogout = () => {
+    localStorage.removeItem('access_token');
+    localStorage.removeItem('username');
+    window.location.href = '/';
   };
 
   return (
@@ -33,14 +39,29 @@ const Navbar = () => {
             <Link href="/about" className="hover:text-primary transition-colors">
              Contact
             </Link>
+            {username && (
+              <a href="/" className="hover:text-primary transition-colors">
+                {username}
+              </a>
+            )}
+            {!username && (
+
             <Link href="/login" className="hover:text-primary transition-colors">
-              Connexion
+              Connexion  
             </Link>
+            )}
           </div>
         </div>
 
         <div className="flex items-center gap-2">
           <ThemeToggle />
+          {username && (
+            <div className="flex gap-3">  
+            <button onClick={handleLogout} className=" flex gap-2 border-none bg-transparent hover:text-primary transition-colors">
+           <LogOut className="h-6 w-6 "/>
+            </button>
+          </div>
+        )}
 
           {/* Mobile Menu Button */}
           <button
@@ -50,7 +71,9 @@ const Navbar = () => {
           >
             {isMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
           </button>
+           
         </div>
+       
       </nav>
 
       {/* Mobile Menu Overlay */}

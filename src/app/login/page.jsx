@@ -8,6 +8,9 @@ import { Label } from "@/components/ui/label"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import { Checkbox } from "@/components/ui/checkbox"
 import { Eye, EyeOff, Mail, Lock } from "lucide-react"
+import { toast, ToastContainer, Bounce } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 
 export default function LoginPage() {
   const [showPassword, setShowPassword] = useState(false)
@@ -16,19 +19,80 @@ export default function LoginPage() {
   const [rememberMe, setRememberMe] = useState(false)
   const [isLoading, setIsLoading] = useState(false)
 
+
   const handleSubmit = async (e) => {
     e.preventDefault()
     setIsLoading(true)
 
     // Simulation d'une requête de connexion
     await new Promise((resolve) => setTimeout(resolve, 1000))
+     if (!email || !password) {
+      toast.error('Veuillez remplir tous les champs.');
+      return;
+    }
 
-    console.log("Tentative de connexion:", { email, password, rememberMe })
+    try {
+      const response = await fetch('http://localhost:8000/login/', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ email, password }),
+      });
+
+      const result = await response.json();
+
+
+      if (response.ok) {
+        localStorage.setItem('access_token', result.access);
+        localStorage.setItem('refresh_token', result.refresh);
+        localStorage.setItem('username', result.user.username);
+        localStorage.setItem('email', email);
+        localStorage.setItem('is_active', result.user.is_active ? 'true' : 'false');
+        localStorage.setItem('is_superuser', result.user.is_superuser ? 'true' : 'false');
+        toast.success('Connexion reussi')
+        setTimeout(() => {
+          window.location.href = "/";
+        }, 2000);
+
+      } else {
+        // Vérifier si c'est une erreur de serializer
+        if (result.non_field_errors) {
+          toast.error(result.non_field_errors[0]);
+        } else if (result.detail) {
+          toast.error(result.detail);
+        } else if (result.email) {
+          toast.error('Email non reconnu');
+        } else if (result.password) {
+          toast.error('Mot de passe incorrect');
+        } else {
+          toast.error('Identifiants incorrects');
+        }
+      }
+    } catch (error) {
+      toast.error('Erreur réseau ou serveur indisponible.');
+    }
+
     setIsLoading(false)
   }
 
+  
+
   return (
     <div className="flex items-center justify-center bg-background p-4">
+       <ToastContainer
+        position="top-right"
+        autoClose={3000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        theme="dark"
+        pauseOnHover
+        transition={Bounce}
+      />
       <Card className="w-full min-w-sm max-w-md shadow-lg">
         <CardHeader className="space-y-1 text-center">
           <CardTitle className="text-2xl font-bold">Connexion</CardTitle>
@@ -45,7 +109,7 @@ export default function LoginPage() {
                 <Input
                   id="email"
                   type="email"
-                  placeholder="votre@email.com"
+                  placeholder="bryan@blog.com"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   className="pl-10"
