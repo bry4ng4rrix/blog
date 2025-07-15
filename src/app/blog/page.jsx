@@ -31,7 +31,7 @@ const page = () => {
            const data = await response.json();
            // Toujours set un tableau
            if (Array.isArray(data)) {
-             setBlog(data);
+             setBlog(data || []);
            } else if (typeof data === 'object' && data !== null) {
              setBlog([data]);
            } else {
