@@ -48,6 +48,7 @@ const page = () => {
     setlike(prev => !prev);
  }
   return (
+<<<<<<< HEAD
   <div className="grid  sm:grid-cols-1 gap-4 p-2 m-5 "> 
    <ToastContainer
         position="top-right"
@@ -74,6 +75,10 @@ const page = () => {
                    <img src='https://ui-avatars.com/api/?name=Bg&size=128&background=random&color=fff&rounded=true' className='h-10 w-10  object-cover'>
                    </img>
                  </CardHeader>
+=======
+  <div className="grid  sm:grid-cols-2 gap-4 p-2 my5 "> 
+    <Profile />
+>>>>>>> 87b5f1adbd059a2225950d7a8bb499eb2beef94e
 
 
                  <CardContent>

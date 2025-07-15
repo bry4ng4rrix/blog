@@ -87,12 +87,21 @@ fetchuser();
 
           
         </div>
+<<<<<<< HEAD
         <div className='border border-dashed rounded  p-2 flex flex-col justify-between'>
             <p className='text-center '>Crée un blog </p>
             <form className='m-5' method="post">
               <Input placeholder='Titre du blog' className='mb-2' onChange={(e)=>setTitre(e.target.value)} />
                <Textarea placeholder='Description du blog' className='mb-2' onChange={(e)=>setDescription(e.target.value)} />
               <Button className="w-full mt-5 bg-ring rounded-sm text-white" onClick={CreateBlog}>Crée nouveau</Button>
+=======
+        <div className='border border-dashed rounded-sm  '>
+            <p className='text-center  m-2'>Nouveau Blog</p>
+            <form className='m-5'>
+              <Input placeholder='Titre du blog' className='mb-2' />
+               <Textarea placeholder='Description du blog' className='mb-2' />
+              <Button className="w-full mt-5 bg-ring rounded-sm text-white">Crée nouveau</Button>
+>>>>>>> 87b5f1adbd059a2225950d7a8bb499eb2beef94e
             </form>
         </div>
 
