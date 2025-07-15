@@ -17,8 +17,11 @@ const Navbar = () => {
   };
 
   const handleLogout = () => {
-    localStorage.removeItem('access_token');
-    localStorage.removeItem('username');
+        localStorage.removeItem('refresh_token', result.refresh);
+        localStorage.removeItem('username', result.user.username);
+        localStorage.removeItem('email', email);
+        localStorage.removeItem('is_active', result.user.is_active ? 'true' : 'false');
+        localStorage.removeItem('is_superuser', result.user.is_superuser ? 'true' : 'false');
     window.location.href = '/';
   };
 
