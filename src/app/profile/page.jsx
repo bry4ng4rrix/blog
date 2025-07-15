@@ -149,7 +149,7 @@ fetchuser();
   
     <Card className="m-5">
      
-      <div className='grid sm:grid-cols-1 gap-2 mx-5'>
+      <div className='grid sm:grid-cols-1 gap-2 m-5 justify-center items-center'>
       
         <div className='flex flex-col '>
             <img src="/bg.png" alt="imagep" className='h-36 w-36 rounded-full border-2 border-foreground  self-center'  />
