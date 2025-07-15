@@ -117,13 +117,24 @@ const Navbar = () => {
               >
                 Blog
               </Link>
-              <Link
+              {username && (
+          <Link
+                href="/profile"
+                onClick={closeMenu}
+                className="text-lg font-semibold py-2 px-4 rounded-lg hover:bg-accent transition-colors"
+              >
+                profile
+              </Link>
+              )}
+              {!username && (
+                <Link
                 href="/login"
                 onClick={closeMenu}
                 className="text-lg font-semibold py-2 px-4 rounded-lg hover:bg-accent transition-colors"
               >
                 Connexion
-              </Link>
+              </Link>  
+        )}
             </div>
           </div>
         </div>
