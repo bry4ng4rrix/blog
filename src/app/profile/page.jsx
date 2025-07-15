@@ -79,7 +79,7 @@ const handledelete = async(id) => {
 
   const fetchuser = async()=> {
   
-         const response = await fetch('https://blog-s1n0.onrender.com/api/user/' , {
+         const response = await fetch('https://blog-s1n0.onrender.com/profile/' , {
               method : 'GET',
                 headers : {
                     'Authorization': `Bearer ${token}`,
