@@ -104,13 +104,6 @@ const Navbar = () => {
                 Home
               </Link>
               <Link
-                href="/about"
-                onClick={closeMenu}
-                className="text-lg font-semibold py-2 px-4 rounded-lg hover:bg-accent transition-colors"
-              >
-                About
-              </Link>
-              <Link
                 href="/blog"
                 onClick={closeMenu}
                 className="text-lg font-semibold py-2 px-4 rounded-lg hover:bg-accent transition-colors"
