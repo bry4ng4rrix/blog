@@ -129,3 +129,5 @@ def blog_count_view(request):
         "blog_count": count
     }, status=status.HTTP_200_OK)
 
+#redemarage
+
